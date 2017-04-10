@@ -15,7 +15,7 @@ end
 def play_by_number(songs, number)
   if number > songs.size
     puts("Invalid input, please try again")
-  else  
+  else
     puts(songs[number - 1])
   end
 end
@@ -37,7 +37,7 @@ def play(songs)
     play_by_number(songs, song.to_i)
   else
     play_by_name(songs, song)
-  end 
+  end
 end
 
 def exit_jukebox
@@ -46,9 +46,9 @@ end
 
 def run(songs)
   help
-  puts("Please enter a command:")  
-  input = gets.chomp.downcase
   while true
+    puts("Please enter a command:")
+    input = gets.chomp.downcase
     case input
     when "help"
       help
@@ -61,5 +61,5 @@ def run(songs)
       break
     end
   end
-  
+
 end
