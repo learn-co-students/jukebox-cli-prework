@@ -4,13 +4,13 @@ require_relative "../lib/advanced_jukebox"
 
 
 my_songs = {
-"Go Go GO" => 'Users/devinoulighan/Development/labs/jukebox-cli-prework/jukebox-cli/audio/Emerald-Park/01.mp3',
-"LiberTeens" => ' Users/devinoulighan/Development/labs/jukebox-cli-prework/jukebox-cli/audio/Emerald-Park/02.mp3',
-"Hamburg" =>  ' Users/devinoulighan/Development/labs/jukebox-cli-prework/jukebox-cli/audio/Emerald-Park/03.mp3',
-"Guiding Light" => ' Users/devinoulighan/Development/labs/jukebox-cli-prework/jukebox-cli/audio/Emerald-Park/04.mp3',
-"Wolf" => ' Users/devinoulighan/Development/labs/jukebox-cli-prework/jukebox-cli/audio/Emerald-Park/05.mp3',
-"Blue" => ' Users/devinoulighan/Development/labs/jukebox-cli-prework/jukebox-cli/audio/Emerald-Park/06.mp3',
-"Graduation Failed" => ' Users/devinoulighan/Development/labs/jukebox-cli-prework/jukebox-cli/audio/Emerald-Park/07.mp3'
+"Go Go GO" => '/Users/devinoulighan/Development/labs/jukebox-cli-prework/audio/Emerald-Park/01.mp3',
+"LiberTeens" => '/Users/devinoulighan/Development/labs/jukebox-cli-prework/audio/Emerald-Park/02.mp3',
+"Hamburg" =>  '/Users/devinoulighan/Development/labs/jukebox-cli-prework/audio/Emerald-Park/03.mp3',
+"Guiding Light" => '/Users/devinoulighan/Development/labs/jukebox-cli-prework/audio/Emerald-Park/04.mp3',
+"Wolf" => '~/Development/labs/jukebox-cli-prework/audio/Emerald-Park/05.mp3',
+"Blue" => '/Users/devinoulighan/Development/labs/jukebox-cli-prework/audio/Emerald-Park/06.mp3',
+"Graduation Failed" => '/Users/devinoulighan/Development/labs/jukebox-cli-prework/audio/Emerald-Park/07.mp3'
 }
 
 run(my_songs)
