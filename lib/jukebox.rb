@@ -27,19 +27,16 @@ end
 def play(my_songs)
   puts "Please enter a song name or number:"
   response =  gets.chomp
-  songs = {}
-  my_songs.each_with_index do |song, index|
-    songs[index + 1] = song
-  end
-  if !songs.has_key?(response.to_i) && !songs.value?(response)
+  if !my_songs.include?(response) && !(0..my_songs.length).include?(response.to_i - 1)
     puts "Invalid input, please try again"
   else
-    songs.each do |key, value|
-      if response.to_i == key || response == value
-        puts "Playing #{value}"
-      end
+    my_songs.each do |song|
+      if my_songs[response.to_i - 1] == song || response == song
+        puts "Playing #{song}"
     end
   end
+end
+
 end
 
 def exit_jukebox
@@ -61,3 +58,20 @@ def run(my_songs)
       exit_jukebox
   end
 end
+
+
+
+=begin songs = {}
+my_songs.each_with_index do |song, index|
+  songs[index + 1] = song
+end
+if !songs.has_key?(response.to_i) && !songs.value?(response)
+  puts "Invalid input, please try again"
+else
+  songs.each do |key, value|
+    if response.to_i == key || response == value
+      puts "Playing #{value}"
+    end
+  end
+end
+=end
