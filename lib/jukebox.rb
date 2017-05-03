@@ -33,10 +33,9 @@ def play(my_songs)
     my_songs.each do |song|
       if my_songs[response.to_i - 1] == song || response == song
         puts "Playing #{song}"
+      end
     end
   end
-end
-
 end
 
 def exit_jukebox
