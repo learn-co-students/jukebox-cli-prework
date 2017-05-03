@@ -26,15 +26,13 @@ end
 
 def play(my_songs)
   puts "Please enter a song name or number:"
-  response =  gets.chomp
-  if !my_songs.include?(response) && !(0..my_songs.length).include?(response.to_i - 1)
-    puts "Invalid input, please try again"
+  response = gets.chomp
+  if my_songs.include?(response)
+    puts "Playing #{response}"
+  elsif (1..my_songs.length).include?(response.to_i)
+    puts "Playing #{my_songs[response.to_i - 1]}"
   else
-    my_songs.each do |song|
-      if my_songs[response.to_i - 1] == song || response == song
-        puts "Playing #{song}"
-      end
-    end
+    puts "Invalid input, please try again"
   end
 end
 
