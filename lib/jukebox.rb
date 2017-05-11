@@ -22,11 +22,12 @@ end
 
 def play(songs)
   puts "Please enter a song name or number:"
-  choice = gets.chomp
-  if 1 <= choice.to_i && choice.to_i <= 9
-    puts "Playing #{songs[choice.to_i - 1]}"
-  elsif songs.include?(choice.to_s)
-    puts "Playing #{choice}"
+  input = gets.chomp
+
+  if 1 <= input.to_i && input.to_i <= songs.length
+    puts "Playing #{songs[input.to_i - 1]}"
+  elsif songs.include?(input.to_s)
+    puts "Playing #{input}"
   else
     puts "Invalid input, please try again"
   end
@@ -40,6 +41,26 @@ def exit_jukebox
   puts "Goodbye"
 end
 
-def run
+def run(songs)
+  puts "Hi! I'm a Jukebox"
+  help
+  choice = ""
 
+  until choice == "exit"
+    puts "Please enter a command:"
+    choice = gets.chomp.downcase
+
+    case choice
+    when "help"
+      help
+    when "list"
+      list(songs)
+    when "play"
+      play(songs)
+    when "exit"
+      exit_jukebox
+    else
+      puts "Invalid input, please try again"
+    end
+  end
 end
