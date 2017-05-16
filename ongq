@@ -1,0 +1,27 @@
+
+[1mFrom:[0m /home/tknightx31-53477/code/labs/jukebox-cli-prework/lib/jukebox.rb @ line 40 Object#play:
+
+    [1;34m29[0m: [32mdef[0m [1;34mplay[0m(songs)
+    [1;34m30[0m:   puts [31m[1;31m"[0m[31mPlease enter a song name or number:[1;31m"[0m[31m[0m
+    [1;34m31[0m:   user_input = gets.chomp
+    [1;34m32[0m: 
+    [1;34m33[0m:   [1;34m#test if valid[0m
+    [1;34m34[0m:   [32munless[0m songs.include?(user_input) || ([1;34m1[0m..songs.length).include?(user_input)
+    [1;34m35[0m:     puts [31m[1;31m"[0m[31mInvalid input, please try again[1;31m"[0m[31m[0m
+    [1;34m36[0m:     user_input = gets.chomp
+    [1;34m37[0m:   [32mend[0m
+    [1;34m38[0m: 
+    [1;34m39[0m:   [1;34m#test if it's an integer, if it is, get corresponding song name to integer[0m
+ => [1;34m40[0m:   binding.pry
+    [1;34m41[0m: 
+    [1;34m42[0m:   [32mif[0m user_input == user_input.to_s
+    [1;34m43[0m:     song_name = user_input
+    [1;34m44[0m:   [32melse[0m
+    [1;34m45[0m:     song_name = songs[user_input-[1;34m1[0m]
+    [1;34m46[0m:   [32mend[0m
+    [1;34m47[0m: 
+    [1;34m48[0m:     puts [31m[1;31m"[0m[31mplaying #{song_name}[0m[31m)[1;31m"[0m[31m[0m
+    [1;34m49[0m: 
+    [1;34m50[0m: 
+    [1;34m51[0m: [32mend[0m
+
