@@ -54,8 +54,6 @@ def run(songs)
       play(songs)
     elsif input == "exit"
       exit_jukebox
-    else
-      puts "Please type help for a list of valid commands!"
     end
   end
 end
