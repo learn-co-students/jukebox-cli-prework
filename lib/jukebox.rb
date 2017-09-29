@@ -58,10 +58,13 @@ def run(songs)
         case
         when userInput == "list"
           list(songs)
+          userInput = gets.chomp
         when userInput == "help"
           help
+          userInput = gets.chomp
         when userInput == "play"
           play(songs)
+          userInput = gets.chomp
         else
           help
           userInput = gets.chomp
