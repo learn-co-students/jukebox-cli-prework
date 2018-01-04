@@ -14,10 +14,10 @@ songs = [
 
 def help
   puts "I accept the following commands:
-- help : displays this help message
-- list : displays a list of songs you can play
-- play : lets you choose a song to play
-- exit : exits this program"
+  - help : displays this help message
+  - list : displays a list of songs you can play
+  - play : lets you choose a song to play
+  - exit : exits this program"
 end
 
 def list(songs)
@@ -38,4 +38,21 @@ end
 
 def exit_jukebox
   puts "Goodbye"
+end
+
+def run
+  help
+  puts "Please enter a command:"
+  user_input = gets.chomp
+  if user_input == "exit"
+    exit_jukebox
+  elsif user_input == "list"
+    list(songs)
+  elsif user_input == "play"
+    play(songs)
+  elsif user_input == "help"
+    help
+  else
+    run
+  end
 end
