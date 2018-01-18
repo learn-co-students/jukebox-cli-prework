@@ -33,8 +33,10 @@ def play (songs)
       puts "Playing #{song}"
     elsif user_input.to_i>0 && user_input.to_i <= songs.length
       puts "Playing #{songs[user_input.to_i-1]}"
+      return
     else
       puts "Invalid input, please try again"
+      return
     end
   }
 end
@@ -43,7 +45,7 @@ def exit_jukebox
   puts "Goodbye"
 end
 
-def run
+def run(songs)
   help
   puts "Please enter a command:"
   user_input = gets.chomp
