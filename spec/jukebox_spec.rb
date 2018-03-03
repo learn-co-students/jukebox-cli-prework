@@ -1,5 +1,4 @@
 require_relative 'spec_helper'
-require 'pry'
 
 songs = [
   "Phoenix - 1901",
@@ -25,41 +24,48 @@ describe "CLI Jukebox" do
     describe '#play' do
       it "can find a song when given a number from the user" do
           allow(self).to receive(:gets).and_return("1")
-          expect { play(songs) }.to output(/Phoenix - 1901/).to_stdout
+          play_songs = play(songs)
+          expect { play_songs }.to output(/Phoenix - 1901/).to_stdout
         end
 
       it "can find a song when given a full song name" do
         allow(self).to receive(:gets).and_return("Phoenix - 1901")
-        expect{ play(songs) }.to output(/Phoenix - 1901/).to_stdout
+        play_songs = play(songs)
+        expect{ play_songs }.to output(/Phoenix - 1901/).to_stdout
       end
 
       it 'returns an error when given a number that does not correspond to a song' do
         allow(self).to receive(:gets).and_return("12323")
-        expect { play(songs) }.to output(/Invalid input, please try again/).to_stdout
+        play_songs = play(songs)
+        expect { play_songs }.to output(/Invalid input, please try again/).to_stdout
       end
 
       it 'returns an error when given a name that does not correspond to an existing song' do
         allow(self).to receive(:gets).and_return("Blah blah foo blah")
-        expect { play(songs) }.to output(/Invalid input, please try again/).to_stdout
+        play_songs = play(songs)
+        expect { play_songs }.to output(/Invalid input, please try again/).to_stdout
       end
     end
 
     describe "#list" do
       it "lists out the available songs" do  
-        expect { list(songs) }.to output(/Phoenix - 1901/).to_stdout
+        list_songs = list(songs)
+        expect { list_songs }.to output(/Phoenix - 1901/).to_stdout
       end
     end
 
     describe "#exit_jukebox" do 
       it "terminates the running of the program and outputs 'Goodbye'" do
-        expect { exit_jukebox }.to output(/Goodbye/).to_stdout 
+        exit_j = exit_jukebox
+        expect { exit_j }.to output(/Goodbye/).to_stdout 
       end
     end
 
     describe '#run' do
     it "starts the program script" do
       allow(self).to receive(:gets).and_return("exit")
-      expect { run(songs) }.to output(/Please enter a command:/).to_stdout
+      run_songs = run(songs)
+      expect { run_songs }.to output(/Please enter a command:/).to_stdout
     end
   end
 
@@ -68,13 +74,15 @@ describe "CLI Jukebox" do
   context "with commands" do
     it "responds to 'help'" do
       self.stub(:gets).and_return("help", "exit")
-      help_output = capture_stdout { run(songs) }
+      run_songs = run(songs)
+      help_output = capture_stdout { run_songs }
       expect(help_output).to include("help" && "list" && "play" && "exit")
     end
 
     it "responds to 'exit'" do
       self.stub(:gets).and_return("exit")
-      exit_output = capture_stdout { run(songs) }
+      run_songs = run(songs)
+      exit_output = capture_stdout { run_songs }
       expect(exit_output).to include("Goodbye")
     end
   end
