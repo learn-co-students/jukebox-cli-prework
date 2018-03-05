@@ -40,8 +40,13 @@ end
 
 def list(songs)
   songs.each_with_index do |song, idx|
-    #binding.pry
+  #binding.pry
+  n = idx + 1
+  #binding.pry
+  puts "#{n.to_s}. #{song}"
   end
-  
+end
 
+def exit_jukebox
+  puts "Goodbye"
 end
