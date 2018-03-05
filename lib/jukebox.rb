@@ -1,4 +1,6 @@
 require 'pry'
+Pry.config.input = STDIN
+Pry.config.output = STDOUT
 songs = [
   "Phoenix - 1901",
   "Tokyo Police Club - Wait Up",
@@ -22,7 +24,6 @@ end
 
 
 def play(songs)
-  #binding.pry
   puts "Please enter a song name or number:"
   response = gets.chomp
   songs.each_with_index do |song, number|
@@ -35,4 +36,12 @@ def play(songs)
       puts "Invalid input, please try again"
     end
   end
+end
+
+def list(songs)
+  songs.each_with_index do |song, idx|
+    #binding.pry
+  end
+  
+
 end
