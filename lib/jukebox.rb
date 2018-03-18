@@ -35,27 +35,27 @@ end
 
 # def play(songs)
 #   puts "Please enter a song name or number:"
-#   users_reply = gets.chomp
-#   valid_reply = false
-#   songs.each_with_index do | song, index |
-#     if users_reply == song or users_reply.to_i == index+1
-#       puts "Playing #{song}"
-#       valid_reply = true
-#     end
+#   song_to_play = gets.chomp
+#   if (1..9).to_a.include?(song_to_play.to_i)
+#     puts "Playing #{songs[song_to_play.to_i - 1]}"
+#   elsif songs.include?(song_to_play)
+#     puts "Playing #{song_to_play}"
+#   else
+#     puts "Invalid input, please try again"
 #   end
-#   puts "Invalid input, please try again" if valid_reply == false
 # end
 
 def play(songs)
   puts "Please enter a song name or number:"
   users_reply = gets.chomp
-  if songs.include?(users_reply)
-    puts "Playing #{users_reply}"
-  elsif songs[users_reply.to_i-1]
-    puts "Playing #{songs[users_reply.to_i-1]}"
-  else
-    puts "Invalid input, please try again"
+  valid_reply = false
+  songs.each_with_index do | song, index |
+    if users_reply == song or users_reply.to_i == index+1
+      puts "Playing #{song}"
+      valid_reply = true
+    end
   end
+  puts "Invalid input, please try again" if valid_reply == false
 end
 
 def exit_jukebox
