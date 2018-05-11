@@ -4,13 +4,13 @@
 
 
 my_songs = {
-"Go Go GO" => '/Users/quinnlashinsky/Desktop/Flatiron-School/Labs/jukebox-cli-prework/audio/Emerald-Park/01.mp3',
+"Go Go GO" => './audio/Emerald-Park/01.mp3',
 "LiberTeens" => '/Users/quinnlashinsky/Desktop/Flatiron-School/Labs/jukebox-cli-prework/audio/Emerald-Park/02.mp3',
 "Hamburg" =>  '/Users/quinnlashinsky/Desktop/Flatiron-School/Labs/jukebox-cli-prework/audio/Emerald-Park/03.mp3',
 "Guiding Light" => '/Users/quinnlashinsky/Desktop/Flatiron-School/Labs/jukebox-cli-prework/audio/Emerald-Park/04.mp3',
 "Wolf" => '/Users/quinnlashinsky/Desktop/Flatiron-School/Labs/jukebox-cli-prework/audio/Emerald-Park/05.mp3',
 "Blue" => '/Users/quinnlashinsky/Desktop/Flatiron-School/Labs/jukebox-cli-prework/audio/Emerald-Park/06.mp3',
-"Graduation Failed" => '/Users/quinnlashinsky/Desktop/Flatiron-School/Labs/jukebox-cli-prework/audio/Emerald-Park/07.mp3'
+"Graduation Failed" => './audio/Emerald-Park/07.mp3'
 }
 
 
