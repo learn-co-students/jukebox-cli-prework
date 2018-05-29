@@ -19,7 +19,7 @@ songs = [
 
 #puts say_hello(users_name)
 
-def yo
+def help
   puts "I accept the following commands:
   - help : displays this help message
   - list : displays a list of songs you can play
@@ -54,7 +54,7 @@ def exit_jukebox
 end
 
 def run(array)
-  yo
+  help
 
   puts "Please enter a command:"
   user_response = gets.chomp
@@ -65,7 +65,7 @@ def run(array)
     elsif user_response == "play"
       play(array)
     elsif user_response == "help"
-      yo
+      help
     end
     puts "Please enter a command:"
     user_response = gets.chomp
