@@ -30,16 +30,13 @@ def play(songs)
   #The play command should ask a user to input a song name or number. It should then output 'Playing Phoenix - 1901' or whatever the song name is.
   puts "Please enter a song name or number:"
   user_song = gets.chomp
-  list_of_songs = list(songs)
   #check if valid number first
-  if user_song.class == Fixnum
-    user_song = list_of_songs[user_song-1]
-  end
-
-  if list_of_songs.include?(user_song) && !list_of_songs.include?(user_song).nil?
-    puts "Playing #{user_song}"
+  if (1..9).to_a.include?(user_song.to_i)
+      puts "Playing #{songs[user_song.to_i - 1]}"
+  elsif songs.include?(user_song)
+      puts "Playing #{user_song}"
   else
-    puts "Invalid input, please try again"
+      puts "Invalid input, please try again"
   end
 end
 
@@ -53,7 +50,6 @@ def list(songs)
 
   songs.each_with_index do |song, index|
     puts "#{index+1}. #{song}"
-    "#{index+1}. #{song}"
   end
 end
 
@@ -63,7 +59,6 @@ def exit_jukebox
 end
 
 def run(songs)
-  help
   loop do
     puts "Please enter a command:"
     input_command = gets.chomp
@@ -77,7 +72,8 @@ def run(songs)
     when "exit"
       exit_jukebox
       break
+    else
+      help
     end
   end
-
 end
