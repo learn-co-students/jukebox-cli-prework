@@ -42,6 +42,23 @@ def play(my_songs)
   #if it is, play the song using the system 'open <file path>' syntax
   #get the file path of the song by looking it up in the my_songs hash
   
+  puts "Please enter a song name:"
+  user_choice = gets.chomp
+  is_valid = "no"
+  
+  my_songs.each do |song, path|
+    if user_choice == song
+      system "open #{path}"
+      is_valid = "yes"
+    end
+  end
+  
+  if is_valid == "no"
+    puts "Invalid input, please try again"
+    user_choice = gets.chomp
+    play(my_songs)
+  end
+  
 end
 
 def exit_jukebox
