@@ -1,3 +1,5 @@
+require 'pry'
+
 songs = [
   "Phoenix - 1901",
   "Tokyo Police Club - Wait Up",
@@ -39,12 +41,11 @@ def exit_jukebox
 end
 
 def run(songs) 
+  user_input = ""
   help
-  puts "Please enter a command:"
-  user_input = gets.downcase.chomp
   unless user_input == "exit"
     puts "Please enter a command:"
-  else
+    user_input = gets.downcase.chomp
     case user_input 
     when "list"
       list(songs)
