@@ -27,7 +27,9 @@ def play(songs)
   user_song = gets.chomp
   if list(songs).include?(user_song)
     puts "Playing #{user_song}"
-  else 
+  elsif (1..9).to_a.include?(user_song.to_i)
+    puts "Playing #{songs[user_song.to_i - 1]}"
+  else
     puts "Invalid input, please try again"
   end
 end
@@ -39,7 +41,7 @@ end
 def run(songs) 
   help
   puts "Please enter a command:"
-  user_input = gets.chomp
+  user_input = gets.downcase.chomp
   unless user_input == "exit"
     puts "Please enter a command:"
   else
@@ -47,11 +49,14 @@ def run(songs)
     when "list"
       list(songs)
     when "play"
+      list(songs)
       play(songs)
     when "help"
       help
     when "exit"
       exit_jukebox
+    else
+      help
     end
   end
 end
