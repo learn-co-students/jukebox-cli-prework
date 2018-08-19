@@ -21,16 +21,17 @@ def help
 end 
 
 
+def play
+ 
+end
+
+
 def list(songs) 
   songs.each_with_index do |song, index|
     puts "#{index + 1}. #{song}" 
   end 
 end 
 # binding.pry 
-
-def play
- 
-end 
 
 
 def exit_jukebox
