@@ -1,3 +1,5 @@
+require "pry"
+
 songs = [
   "Phoenix - 1901",
   "Tokyo Police Club - Wait Up",
@@ -20,10 +22,11 @@ end
 
 
 def list(songs) 
-  songs.each_with_index do |band_song_string, index|
-    puts "#{index + 1}." band_song_string
+  songs.each_with_index do |song, index|
+    puts "#{index + 1}. #{song}" 
+  end 
 end 
-
+# binding.pry 
 
 def play
  
