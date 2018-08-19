@@ -19,15 +19,14 @@ def help
 end 
 
 
-def play(songs)
+def list(songs) 
   songs.each_with_index do |band_song_string, index|
     puts "#{index + 1}." band_song_string
-  end 
 end 
 
 
-def list 
-  
+def play
+ 
 end 
 
 
