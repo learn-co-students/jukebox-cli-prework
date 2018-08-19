@@ -47,20 +47,19 @@ end
 
 
 def run(songs) 
- help
- puts "Please enter a command:"
- input = gets.chomp
- while input != "exit" 
-   puts "Please enter a command:"
- end 
- if input == "list" 
-   list
- elsif input == "help"
-   help 
- elsif input == "play"
-  play
-
-elsif  input == "exit"
-  exit
- end 
+  help
+  puts "Please enter a command:"
+  input = gets.chomp
+  while input != "exit" 
+    puts "Please enter a command:"
+  end 
+  if input == "list" 
+    list
+  elsif input == "help"
+    help 
+  elsif input == "play"
+    play
+  elsif input == "exit"
+    exit
+  end 
 end 
