@@ -47,7 +47,7 @@ def play(songs)
             end
     elsif sel.is_a? String
           if sel.numeric?
-            if sel.to_iz<songs.length
+            if sel.to_i<songs.length
               puts "Playing #{songs[sel.to_i-1]}"
             else
               puts "Invalid input, please try again"
