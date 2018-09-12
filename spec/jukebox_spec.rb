@@ -32,7 +32,7 @@ describe "CLI Jukebox" do
         allow(self).to receive(:gets).and_return("Phoenix - 1901")
         expect{ play(songs) }.to output(/Phoenix - 1901/).to_stdout
       end
-
+      
       it 'returns an error when given a number that does not correspond to a song' do
         allow(self).to receive(:gets).and_return("12323")
         expect { play(songs) }.to output(/Invalid input, please try again/).to_stdout

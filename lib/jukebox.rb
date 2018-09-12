@@ -33,14 +33,12 @@ end
 def play(songs)
   puts "Please enter a song name or number:"
   user_song = gets.chomp
-  if user_song>0 && user_song<songs.size
-    "Playing #{songs[user_song-1]}"
-    
-  elsif songs.find{|u_sing| u_sing == user_song}
-    "Playing #{user_song}"
-    
+  if songs.find{|u_sing| u_sing == user_song} != nil
+    puts "Playing #{user_song}"
+  elsif user_song.to_i > 0 && user_song.to_i < songs.size  + 1
+    puts "Playing #{songs [user_song.to_i - 1]}"
   else
-    "Invalid input"
+    puts "Invalid input"
   end
 end
 
