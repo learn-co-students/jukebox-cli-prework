@@ -23,11 +23,13 @@ def help
   puts "- play : lets you choose a song to play"
   puts "- exit : exits this program"
 end
+
 def list(songs)
   songs.each_with_index do |song, index|
     puts "#{index+1}. #{song}"
   end
 end
+
 def play(songs)
   puts "Please enter a song name or number:"
   user_song = gets.chomp
@@ -41,13 +43,15 @@ def play(songs)
     "Invalid input"
   end
 end
+
 def exit_jukebox
   puts "Goodbye"
 end
-def run
+
+def run(songs)
   help
   exitted = false
-  while != exitted
+  while exitted == false
     puts "Please enter a command:"
     user_resp = gets.chomp
     if user_resp == "help"
@@ -56,10 +60,11 @@ def run
       exit
       exitted = true
     elsif user_resp == "list"
-      list
+      list(songs)
     elsif user_resp == "play"
-      play
+      play(songs)
     else
       puts "Invalid input"
+    end
   end
 end
