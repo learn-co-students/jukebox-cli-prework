@@ -38,7 +38,7 @@ def play(songs)
   elsif user_song.to_i > 0 && user_song.to_i < songs.size  + 1
     puts "Playing #{songs [user_song.to_i - 1]}"
   else
-    puts "Invalid input"
+    puts "Invalid input, please try again"
   end
 end
 
