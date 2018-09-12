@@ -4,13 +4,14 @@
 require 'pry'
 
 my_songs = {
- "Go Go GO" => 'Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/01.mp3',
- "LiberTeens" => 'Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/02.mp3',
- "Hamburg" =>  'Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/03.mp3',
- "Guiding Light" => 'Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/04.mp3',
- "Wolf" => 'Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/05.mp3',
- "Blue" => 'Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/06.mp3',
- "Graduation Failed" => 'Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/07.mp3'
+
+ "Go Go GO" => '/Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/01.mp3',
+ "LiberTeens" => '/Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/02.mp3',
+ "Hamburg" =>  '/Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/03.mp3',
+ "Guiding Light" => '/Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/04.mp3',
+ "Wolf" => '/Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/05.mp3',
+ "Blue" => '/Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/06.mp3',
+ "Graduation Failed" => '/Users/andrewrivera/development/ruby/first_applications/jukebox-cli-prework/audio/Emerald-Park/07.mp3'
  }
 
 def help
@@ -31,7 +32,7 @@ end
 #list the songs by name
 
 def play(my_songs)
-  selection = gets.chomp
+  selection = gets.strip
   if my_songs.has_key?(selection)
     my_songs.each do |name, path|
       if name == selection
