@@ -76,7 +76,7 @@ end
 #
 # We need to keep our program running as long as the user's input is not "exit". Use a loop to continue asking the user for input until or unless their input is "exit". Use if or case statements to determine how your program will respond to a user's input. For example, if their input is "list", call the list method, if their input is "play", call the play method, if their input is "help", call the help method and if their input is "exit", call the exit_jukebox method and break out of your loop to stop the program.
 
-def run(help)
+def run(songs)
   puts "Please enter a command:"
   input = gets.chomp
   if input.downcase == "list"
@@ -87,7 +87,6 @@ def run(help)
     help
   elsif input.downcase == "exit"
     exit_jukebox
-    break
   else
     help
   end
