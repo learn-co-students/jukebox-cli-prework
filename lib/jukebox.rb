@@ -34,7 +34,7 @@ def play(songs)
   puts "Please enter a song name or number:"
   song = gets.chomp
   songs.each_with_index do |song_name, index|
-    if song == index + 1
+    if song.to_i == index + 1
       puts "Playing #{song_name}"
     elsif song == song_name
       puts "Palying #{song_name}"
@@ -49,7 +49,21 @@ puts "Goodbye"
 end
 
 
+def run()
+help
+puts "Please enter a command:"
+command = gets.chomp
+  if command == "list"
+    list(songs)
+  elsif command == "play"
+    play(songs)
+  elsif command == "help"
+    help
+  else command == "exit"
+    exit_jukebox
 
+
+end
 
 
 
