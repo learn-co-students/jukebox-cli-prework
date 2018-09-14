@@ -49,8 +49,8 @@ puts "Goodbye"
 end
 
 
-def run()
-help
+def run(chekers)
+puts help
 puts "Please enter a command:"
 command = gets.chomp
   if command == "list"
@@ -61,7 +61,7 @@ command = gets.chomp
     help
   else command == "exit"
     exit_jukebox
-    break
+    #break
   end
 end
 
