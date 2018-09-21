@@ -1,3 +1,5 @@
+require 'pry'
+
 songs = [
   "Phoenix - 1901",
   "Tokyo Police Club - Wait Up",
@@ -23,10 +25,20 @@ songs.each_with_index {|song,index|
 end
 
 def play(songs)
+  
   puts "Please enter a song name or number:"
   user_choice=gets.chomp
-  if (songs.include?(user_choice) || user_choice<songs.length)
-    puts
+  number=user_choice.to_i
+  if songs.include?(user_choice)
+    puts "Playing #{user_choice}"
+    elsif (number<songs.length && number>0)
+    puts"Playing #{songs[number-1]}"
+  else
+    puts "Invalid input, please try again"
+  end
 end
 
+def exit_jukebox
+  puts "Goodbye"
+end
 
