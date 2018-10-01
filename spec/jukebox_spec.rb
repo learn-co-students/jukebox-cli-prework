@@ -26,7 +26,7 @@ describe "CLI Jukebox" do
       it "can find a song when given a number from the user" do
           allow(self).to receive(:gets).and_return("1")
           expect { play(songs) }.to output(/Phoenix - 1901/).to_stdout
-        end
+      end
 
       it "can find a song when given a full song name" do
         allow(self).to receive(:gets).and_return("Phoenix - 1901")
@@ -57,17 +57,17 @@ describe "CLI Jukebox" do
     end
 
     describe '#run' do
-    it "starts the program script" do
-      allow(self).to receive(:gets).and_return("exit")
-      expect { run(songs) }.to output(/Please enter a command:/).to_stdout
+      it "starts the program script" do
+        allow(self).to receive(:gets).and_return("exit")
+       expect { run(songs) }.to output(/Please enter a command:/).to_stdout
+      end
     end
-  end
 
   end
 
   context "with commands" do
-    it "responds to 'help'" do
-      self.stub(:gets).and_return("help", "exit")
+     it "responds to 'help'" do
+       self.stub(:gets).and_return("help", "exit")
       help_output = capture_stdout { run(songs) }
       expect(help_output).to include("help" && "list" && "play" && "exit")
     end
@@ -78,5 +78,5 @@ describe "CLI Jukebox" do
       expect(exit_output).to include("Goodbye")
     end
   end
-end
 
+end
