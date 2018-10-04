@@ -1,6 +1,4 @@
-#Here is the song hash you will be working with. Each key is a song name and each value is the location of it's mp3 file.
-#make sure to edit the value of each key to replace < path to this directory >
-#with the correct path to this directory on your computer
+#CHECK PATH!!
 require 'pry'
 my_songs = {
 "Go Go GO" => '/Users/yoan/Development/code/jukebox-cli-prework/audio/Emerald-Park/01.mp3',
@@ -36,7 +34,6 @@ def play(my_songs)
   response = gets.chomp
   if my_songs.keys.include?(response)
     puts "Playing #{response} "
-    binding.pry
     system "open #{my_songs[response]}"
   else
     puts "That song doesn't exist"
