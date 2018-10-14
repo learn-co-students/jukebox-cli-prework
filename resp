@@ -1,0 +1,29 @@
+
+[1mFrom:[0m /home/beloved-buffer-8229/jukebox-cli-prework/lib/jukebox.rb @ line 48 Object#run:
+
+    [1;34m41[0m: [32mdef[0m [1;34mrun[0m(songs)
+    [1;34m42[0m: 
+    [1;34m43[0m:   [1;34m#help[0m
+    [1;34m44[0m:   loop [32mdo[0m
+    [1;34m45[0m:     puts [31m[1;31m"[0m[31mPlease enter a command[1;31m"[0m[31m[0m
+    [1;34m46[0m: 
+    [1;34m47[0m:     resp=gets.chomp
+ => [1;34m48[0m:     binding.pry
+    [1;34m49[0m:     [32mif[0m resp.length<[1;34m1[0m
+    [1;34m50[0m:       [32mbreak[0m
+    [1;34m51[0m:     [32melse[0m
+    [1;34m52[0m:       [32mcase[0m resp
+    [1;34m53[0m:         [32mwhen[0m [31m[1;31m"[0m[31mhelp[1;31m"[0m[31m[0m 
+    [1;34m54[0m:           help
+    [1;34m55[0m:         [32mwhen[0m [31m[1;31m"[0m[31mlist[1;31m"[0m[31m[0m
+    [1;34m56[0m:           list(songs)
+    [1;34m57[0m:         [32mwhen[0m [31m[1;31m"[0m[31mplay[1;31m"[0m[31m[0m
+    [1;34m58[0m:           play(songs)
+    [1;34m59[0m:         [32mwhen[0m [31m[1;31m"[0m[31mexit[1;31m"[0m[31m[0m
+    [1;34m60[0m:           exit_jukebox
+    [1;34m61[0m:           [32mbreak[0m
+    [1;34m62[0m:       [32mend[0m
+    [1;34m63[0m:     [32mend[0m
+    [1;34m64[0m:   [32mend[0m
+    [1;34m65[0m: [32mend[0m
+
