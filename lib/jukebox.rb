@@ -31,10 +31,14 @@ end
 def play(songs)
   puts "Please enter a song name or number:"
   user_response = gets.chomp
-  if songs.include?(user_response)
-    puts user_response
-  elsif user_response.to_i > 0 && user_response.to_i < 9
-    puts songs[user_response.to_i]
+  #if songsinclude?(user_response.to_i)
+  #handles user input of a number
+  if (1..9).to_a.include?(user_response.to_i)
+    puts "Playing #{songs[user_response.to_i-1]}"
+
+  # handle user input of string name of song
+  elsif songs.include?(user_response)
+    puts "Playing #{user_response}"
   else
     puts "Invalid input, please try again"
   end
