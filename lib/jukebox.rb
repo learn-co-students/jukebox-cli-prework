@@ -21,21 +21,17 @@ def help
 end
 
 def list(songs)
-  index = 1
   songs.each_with_index do |song, index|
-    puts "#{index}. #{song}"
-    index += 1
+    puts "#{index + 1}. #{song}"
   end
 end
 
 def play(songs)
   puts "Please enter a song name or number:"
   user_response = gets.chomp
-  #if songsinclude?(user_response.to_i)
   #handles user input of a number
   if (1..9).to_a.include?(user_response.to_i)
     puts "Playing #{songs[user_response.to_i-1]}"
-
   # handle user input of string name of song
   elsif songs.include?(user_response)
     puts "Playing #{user_response}"
@@ -64,6 +60,7 @@ def run(songs)
       help
     else
       puts "Invalid input, please try again"
+      help
     end
   end
 end
