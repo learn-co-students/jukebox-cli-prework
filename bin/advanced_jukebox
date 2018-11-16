@@ -3,14 +3,6 @@
 require_relative "../lib/advanced_jukebox"
 
 
-my_songs = {
-"Go Go GO" => "Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/01.mp3",
-"LiberTeens" => "Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/01.mp3",
-"Hamburg" =>  'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/01.mp3',
-"Guiding Light" => 'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/01.mp3',
-"Wolf" => 'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/01.mp3',
-"Blue" => 'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/01.mp3",
-"Graduation Failed" => "Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/01.mp3'
-}
+
 
 run(my_songs)
