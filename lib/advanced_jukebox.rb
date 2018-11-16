@@ -3,25 +3,28 @@
 #with the correct path to this directory on your computer
 
 # my_songs = {
-# "Go Go GO" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/01.mp3',
-# "LiberTeens" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/02.mp3',
-# "Hamburg" =>  '< path to this directory >/jukebox-cli/audio/Emerald-Park/03.mp3',
-# "Guiding Light" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/04.mp3',
-# "Wolf" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/05.mp3',
-# "Blue" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/06.mp3',
-# "Graduation Failed" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/07.mp3'
+# "Go Go GO" => 'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/01.mp3',
+# "LiberTeens" => 'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/02.mp3',
+# "Hamburg" =>  'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/03.mp3',
+# "Guiding Light" => 'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/04.mp3',
+# "Wolf" => 'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/05.mp3',
+# "Blue" => 'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/06.mp3',
+# "Graduation Failed" => 'Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/07.mp3'
 # }
 
 def help
-  #this method should be the same as in jukebox.rb
 
+  puts  "I accept the following commands:"
+  puts  "- help : displays this help message"
+  puts  "- list : displays a list of songs you can play"
+  puts  "- play : lets you choose a song to play"
+  puts  "- exit : exits this program"
 end
 
 
 
 def list(my_songs)
-  #this method is different! Collect the keys of the my_songs hash and 
-  #list the songs by name
+  my_songs.collect {|song| puts song.to_s}
 end
 
 
@@ -33,13 +36,48 @@ def play(my_songs)
   #if it isn't, tell them their choice is invalid
   #if it is, play the song using the system 'open <file path>' syntax
   #get the file path of the song by looking it up in the my_songs hash
-  
+  puts "Please enter a song name or number:"
+  response = gets.chomp
+
+  if response == "Go Go GO"
+    system "open #{</Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/01.mp3>}"
+  elsif response == "LiberTeens"
+    system "open #{</Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/02.mp3>}"
+  elsif response =="Hamburg"
+    system "open #{</Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/03.mp3>}"
+  elsif response == "Guiding Light"
+    system "open #{</Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/04.mp3>}"
+  elsif response == "Wolf"
+    system "open #{</Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/05.mp3>}"
+  elsif response == "Blue"
+    system "open #{</Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/06.mp3>}"
+  elsif response == "Graduation Failed"
+    system "open #{</Users/tquirk/Development/code/jukebox-cli-prework/audio/Emerald-Park/07.mp3>}"
+  else
+      puts "Invalid input, please try again"
+    end
 end
 
 def exit_jukebox
-  #this method is the same as in jukebox.rb
+  puts "Goodbye"
 end
 
 def run(my_songs)
-  #this method is the same as in jukebox.rb
+  help
+  puts "Please enter a command:"
+  answer = gets.chomp
+
+  case answer
+    when "help"
+      help()
+    when "list"
+      list()
+    when "play"
+      play()
+    when "exit"
+      exit_jukebox()
+    else
+      puts "Invalid input, please try again."
+      run(songs)
+    end
 end
