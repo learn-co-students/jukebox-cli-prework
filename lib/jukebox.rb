@@ -43,18 +43,16 @@ def run(array)
   help 
   puts "Please enter a command:"
   user_input = gets.chomp
-  until user_input == "exit"
     if user_input == "list"
-      list
+      list(array)
     elsif user_input == "help"
       help
     elsif user_input == "play"
-      play
+      play(array)
     elsif user_input == "exit"
-      help
       exit_jukebox
     end
+      help
     user_input = gets.chomp 
-  end
-end
 
+end
