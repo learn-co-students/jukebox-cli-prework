@@ -12,11 +12,11 @@ songs = [
 
 def help 
   puts "I accept the following commands:
-  - help : displays this help message
-  - list : displays a list of songs you can play
-  - play : lets you choose a song to play
-  - exit : exits this program"
-end
+          - help : displays this help message
+          - list : displays a list of songs you can play
+          - play : lets you choose a song to play
+          - exit : exits this program"
+        end
 
 def list(array)
   array.each_with_index do |value, index|
@@ -36,7 +36,7 @@ def play(array)
 end
 
 def exit_jukebox
-  puts "Goodbye."
+  puts "Goodbye"
 end
 
 def run(array) 
@@ -51,6 +51,7 @@ def run(array)
     elsif user_input == "play"
       play
     elsif user_input == "exit"
+      help
       exit_jukebox
     end
     user_input = gets.chomp 
