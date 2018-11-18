@@ -75,9 +75,6 @@ def run(my_songs)
       play(my_songs)
       puts "Please enter a command:"
       response = gets.chomp
-    else
-      puts "Your input is invalid."
-      break
     end
   end
   exit_jukebox
