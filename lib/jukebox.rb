@@ -50,6 +50,7 @@ def run(array)
       help
     elsif user_input == "play"
       play
+    elsif user_input == "exit"
     end
     user_input = gets.chomp 
   end
