@@ -51,6 +51,7 @@ def run(array)
     elsif user_input == "play"
       play
     elsif user_input == "exit"
+      exit_jukebox
     end
     user_input = gets.chomp 
   end
