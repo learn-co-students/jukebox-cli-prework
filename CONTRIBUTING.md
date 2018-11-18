@@ -1,4 +1,15 @@
-# Contributing to Learn.co Curriculum
+case capacity
+when 0
+  "You ran out of gas."
+when 1..20
+  "The tank is almost empty. Quickly, find a gas station!"
+when 21..70
+  "You should be ok for now."
+when 71..100
+  "The tank is almost full."
+else
+  "Error: capacity has an invalid value (#{capacity})"
+end# Contributing to Learn.co Curriculum
 
 We're really exited that you're about to contribute to the [open curriculum](https://learn.co/content-license) on [Learn.co](https://learn.co). If this is your first time contributing, please continue reading to learn how to make the most meaningful and useful impact possible.
 
