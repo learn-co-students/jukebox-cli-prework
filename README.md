@@ -1,4 +1,4 @@
-# Build a Jukebox
+0# Build a Jukebox
 
 ## Objectives
 
@@ -27,7 +27,8 @@ First, your program needs a `bin` directory. "Bin" is short for "binary" and is 
 
 This is often referred to as a "shebang line" and it tells the shell which interpreter to use to execute the remainder of the file. 
 
-Using the above setup, you can run your program by typing `ruby bin/< your file name >` into the command line. 
+Using the above setup, you can run your program by typing `ruby bin/< your file name >` into the command line. ruby bin/advanced_jukebox
+
 
 Alternatively, you can execute your program by simply typing `bin/< your file name >` into the command line, since the shebang line at the top of your executable file is already telling the shell to use Ruby to interpret the rest of the file. 
 
