@@ -37,3 +37,28 @@ def play(songs)
     puts "Invalid input, please try again"
   end 
 end 
+
+def exit_jukebox
+  puts "Goodbye"
+end 
+
+def run(songs)
+  command =""
+  help
+  loop do 
+    puts "Please enter a command:"
+    command = gets.strip
+    if command == "list"
+      list(songs)
+    elsif command == "play"
+      play(songs)
+    elsif command == "help"
+      help
+    elsif command == "exit"
+      exit_jukebox
+    end
+    break if command == "exit"
+  end 
+end
+
+
