@@ -11,51 +11,59 @@ songs = [
 ]
 
 def help
-puts "I accept the following commands:
+  help = <<-HELP
+I accept the following commands:
 - help : displays this help message
 - list : displays a list of songs you can play
 - play : lets you choose a song to play
-- exit : exits this program"
+- exit : exits this program
+HELP
+
+  puts help
 end
 
 def list(songs)
-  puts "
-  1. Phoenix - 1901
-  2. Tokyo Police Club - Wait Up
-  3. Sufjan Stevens - Too Much
-  4. The Naked and the Famous - Young Blood
-  5. (Far From) Home - Tiga
-  6. The Cults - Abducted
-  7. Phoenix - Consolation Prizes
-  8. Harry Chapin - Cats in the Cradle
-  9. Amos Lee - Keep It Loose, Keep It Tight"
+  songs.each_with_index do |song, i|
+    puts "#{i+1}. #{song}"
+  end
 end
 
 def play(songs)
   puts "Please enter a song name or number:"
-  song = gets.chomp
-  if songs.include(song)
-    puts "Playing #{song}"
-  else puts "Invalid input, please try again"
+  song_to_play = gets.chomp
+  if (1..9).to_a.include?(song_to_play.to_i)
+    puts "Playing #{songs[song_to_play.to_i - 1]}"
+  elsif songs.include?(song_to_play)
+    puts "Playing #{song_to_play}"
+  else
+    puts "Invalid input, please try again"
   end
-
+end
 
 def exit_jukebox
   puts "Goodbye"
 end
 
-def run
-  help
-puts "Please enter a command:"
-input= gets.chomp
-if input == "play"
-  play
-if input == "list"
-  list
-if input == "help"
-  help
-if input == "exit"
-  exit_jukebox
-  break
+def run(songs)
+  # help
+
+  input = ""
+  while input
+    puts "Please enter a command:"
+    input = gets.downcase.strip
+    case input
+    when 'list'
+      list(songs)
+    when 'play'
+      list(songs)
+      play(songs)
+    when 'help'
+      help
+    when 'exit'
+      exit_jukebox
+      break
+    else
+      help
+    end
+  end
 end
-  
