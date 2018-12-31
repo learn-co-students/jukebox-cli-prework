@@ -49,8 +49,10 @@ def run(songs)
   while user_command != "exit"
     if user_command == "list"
       list(songs)
+      break
     elsif user_command == "play"
     play(songs)
+    break
     elsif user_command == "help"
        help
     else exit_jukebox
