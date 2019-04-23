@@ -2,19 +2,22 @@
 #make sure to edit the value of each key to replace < path to this directory >
 #with the correct path to this directory on your computer
 
-# my_songs = {
-# "Go Go GO" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/01.mp3',
-# "LiberTeens" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/02.mp3',
-# "Hamburg" =>  '< path to this directory >/jukebox-cli/audio/Emerald-Park/03.mp3',
-# "Guiding Light" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/04.mp3',
-# "Wolf" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/05.mp3',
-# "Blue" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/06.mp3',
-# "Graduation Failed" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/07.mp3'
-# }
+ my_songs = {
+ "Go Go GO" => 'Users/afhare/Desktop/Dev/jukebox-cli/audio/Emerald-Park/01.mp3',
+ "LiberTeens" => 'Users/afhare/Desktop/Dev/jukebox-cli/audio/Emerald-Park/02.mp3',
+ "Hamburg" =>  'Users/afhare/Desktop/Dev/jukebox-cli/audio/Emerald-Park/03.mp3',
+ "Guiding Light" => 'Users/afhare/Desktop/Dev/jukebox-cli/audio/Emerald-Park/04.mp3',
+ "Wolf" => 'Users/afhare/Desktop/Dev/jukebox-cli/audio/Emerald-Park/05.mp3',
+ "Blue" => 'Users/afhare/Desktop/Dev/jukebox-cli/audio/Emerald-Park/06.mp3',
+ "Graduation Failed" => 'Users/afhare/Desktop/Dev/jukebox-cli/audio/Emerald-Park/07.mp3'
+ }
 
 def help
-  #this method should be the same as in jukebox.rb
-
+ puts "I accept the following commands:
+\n - help : displays this help message
+\n- list : displays a list of songs you can play
+\n- play : lets you choose a song to play
+\n- exit : exits this program"
 end
 
 
@@ -22,6 +25,9 @@ end
 def list(my_songs)
   #this method is different! Collect the keys of the my_songs hash and 
   #list the songs by name
+  my_songs.each do |song|
+    puts "#{song}"
+  end
 end
 
 
@@ -34,12 +40,43 @@ def play(my_songs)
   #if it is, play the song using the system 'open <file path>' syntax
   #get the file path of the song by looking it up in the my_songs hash
   
+    puts "Please enter a song name:"
+  song_request = gets.chomp
+  
+  my_songs.each do |key, value|
+    
+      if song_request == key
+      system 'open <filename>'
+      song_request == [key][value]
+    
+      else
+      puts "Invalid input, please try again."
+      end
+    end
 end
 
 def exit_jukebox
-  #this method is the same as in jukebox.rb
+  puts "Goodbye"
 end
 
 def run(my_songs)
-  #this method is the same as in jukebox.rb
+  
+  help
+  puts "Please enter a command: "
+  answer = ""
+  answer = gets.chomp
+
+  until answer == "exit"
+    case answer
+    when "list"
+      list(my_songs)
+    when "play"
+      play(my_songs)
+    when "help"
+      help
+    when "exit"
+      exit_jukebox
+    else "Invalid input, please type \"help\" for valid commands."
+    end
+  end
 end
