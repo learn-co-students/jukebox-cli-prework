@@ -16,4 +16,4 @@ songs = [
 
 
 
-run(songs)
+play(songs)
