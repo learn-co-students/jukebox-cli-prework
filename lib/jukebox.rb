@@ -1,10 +1,15 @@
+require "pry"
 =begin def say_hello(name)
+=======
+def say_hello(name)
+>>>>>>> c9658330d6d5cf02fbfd85ad2f122f8e77ff345d
   "Hi #{name}!"
 end
  
 puts "Enter your name:"
 users_name = gets.strip
  
+<<<<<<< HEAD
 =end puts say_hello(users_name)
 
 songs = [
@@ -28,15 +33,33 @@ puts "- exit : exits this program"
 end 
 
 def list(songs)
-  songs.each_with_index do |song|
-    puts "song"
+
+  songs.each_with_index do |song, index|
+    puts "#{index + 1}. #{song}"  
   end 
+end
+
+def play(songs)
   
+  puts "Please enter a song name or number:"
+    input = gets.strip
+  
+  if input.to_i == 0
+    if songs.include?(input)
+      puts "Playing #{input}"
+    else 
+     puts "Invalid input, please try again"
+   end
+    
+  else 
+    #binding.pry
+    if condition 
+  else
+    
+  end
+      puts "Playing #{songs[input.to_i - 1]}"
+   end
 end 
-
-
-
-
 
 
 
