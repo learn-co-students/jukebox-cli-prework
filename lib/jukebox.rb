@@ -53,15 +53,18 @@ def play(songs)
     
   else 
     #binding.pry
-    if condition 
-  else
+    if songs.size != input
     
-  end
-      puts "Playing #{songs[input.to_i - 1]}"
-   end
+      puts "Invalid input, please try again"
+    else
+      
+    end 
+    
+      #puts "Playing #{songs[input.to_i - 1]}"
+   
 end 
 
-
+end 
 
 
 
