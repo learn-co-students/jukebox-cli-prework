@@ -46,24 +46,22 @@ def play(songs)
   
   if input.to_i == 0
     if songs.include?(input)
+     # binding.pry
       puts "Playing #{input}"
     else 
      puts "Invalid input, please try again"
    end
     
   else 
-    #binding.pry
-    if songs.size != input
+   
+    if input.to_i > songs.size
     
       puts "Invalid input, please try again"
-    else
       
+    else
+      puts "Playing #{songs[input.to_i - 1]}"
     end 
-    
-      #puts "Playing #{songs[input.to_i - 1]}"
-   
-end 
-
+  end 
 end 
 
 
