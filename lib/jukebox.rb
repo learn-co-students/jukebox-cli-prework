@@ -26,10 +26,10 @@ songs = [
 
 def help 
   puts "I accept the following commands:"
-puts "- help : displays this help message"
-puts "- list : displays a list of songs you can play"
-puts "- play : lets you choose a song to play"
-puts "- exit : exits this program"
+  puts "- help : displays this help message"
+  puts "- list : displays a list of songs you can play"
+  puts "- play : lets you choose a song to play"
+  puts "- exit : exits this program"
 end 
 
 def list(songs)
@@ -69,9 +69,26 @@ def exit_jukebox
 end 
 
 def run(songs)
-  help 
-  puts "Please enter a command"
-  input = gets.strip
+  
+  go = true
+  
+  while go = true
+    help 
+    puts "Please enter a command:"
+    input = gets.strip
+    if input == "help"
+      help
+    elsif input == "exit"
+      go = false
+      exit_jukebox
+    elsif input == "play"
+      play(songs)
+    elsif input == "list"
+      list(songs)
+    else
+      exit_jukebox
+    end
+  end
   
 end 
 
