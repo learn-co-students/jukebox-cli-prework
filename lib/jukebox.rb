@@ -1,17 +1,4 @@
 require "pry"
-=begin def say_hello(name)
-=======
-def say_hello(name)
->>>>>>> c9658330d6d5cf02fbfd85ad2f122f8e77ff345d
-  "Hi #{name}!"
-end
- 
-puts "Enter your name:"
-users_name = gets.strip
- 
-<<<<<<< HEAD
-=end puts say_hello(users_name)
-
 songs = [
   "Phoenix - 1901",
   "Tokyo Police Club - Wait Up",
@@ -25,8 +12,8 @@ songs = [
 ]
 
 def help 
+
   puts "- I accept the following commands:"
-  #puts "/Please enter a command:/"
   puts "- help : displays this help message"
   puts "- list : displays a list of songs you can play"
   puts "- play : lets you choose a song to play"
@@ -35,46 +22,47 @@ end
 
 def list(songs)
 
-  songs.each_with_index do |song, index|
+    songs.each_with_index do |song, index|
     puts "#{index + 1}. #{song}"  
   end 
 end
 
 def play(songs)
   
-  puts "Please enter a song name or number:"
+    puts "Please enter a song name or number:"
     input = gets.strip
   
   if input.to_i == 0
     if songs.include?(input)
-     # binding.pry
       puts "Playing #{input}"
-    else 
-     puts "Invalid input, please try again"
+     else 
+       puts "Invalid input, please try again"
    end
     
-  else 
+     else 
    
-    if input.to_i > songs.size
+   if input.to_i > songs.size
     
-      puts "Invalid input, please try again"
+       puts "Invalid input, please try again"
       
     else
-      puts "Playing #{songs[input.to_i - 1]}"
+       puts "Playing #{songs[input.to_i - 1]}"
     end 
   end 
 end 
 
 def exit_jukebox 
-  puts "Goodbye"
+   puts "Goodbye"
 end 
 
+
+
 def run(songs)
-   
+  
   go = true
   
   while go == true
-    help
+    
     puts "Please enter a command:"
   
     input = gets.strip
@@ -92,7 +80,6 @@ def run(songs)
       go = false
     end
   end
-  
 end 
 
 
