@@ -33,22 +33,31 @@ def list(songs)
   end
 end
 
-# Find song by index
-# validate song name
-
 def play(songs)
   puts 'Please enter a song name or number:'
   input = gets.strip
   
   # Check if input is an integer
-  if input.to_i.class == Integer
+  if (0...songs.length).to_a.include?(input.to_i - 1)
     # If yes, check if integer is in range
     puts "Playing #{songs[input.to_i - 1]}"
-  end
-
-  if songs.include?(input) # Check if name is valid
+  elsif songs.include?(input) # Check if name is valid
     puts "Playing #{input}"
   else
     puts 'Invalid input, please try again'
+  end
+end
+
+def exit_jukebox
+  puts 'Goodbye'
+end
+
+def run(songs)
+  help
+  puts 'Please enter a command:'
+  input = gets.strip
+  
+  if input == 'exit'
+    exit_jukebox
   end
 end
