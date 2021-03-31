@@ -37,15 +37,18 @@ end
 # validate song name
 
 def play(songs)
-  # puts 'Please enter a song name or number:'
-  # input = gets.strip
+  puts 'Please enter a song name or number:'
+  input = gets.strip
   
-  # # Check if input is an integer
-  # if input.to_i.class == Integer
-  #   # If yes, check if integer is in range
-  #   puts "Playing #{songs[input.to_i - 1]}"
-  # end
-  #   # If no, check if name is valid
-end
+  # Check if input is an integer
+  if input.to_i.class == Integer
+    # If yes, check if integer is in range
+    puts "Playing #{songs[input.to_i - 1]}"
+  end
 
-play(songs)
+  if songs.include?(input) # Check if name is valid
+    puts "Playing #{input}"
+  else
+    puts 'Invalid input, please try again'
+  end
+end
